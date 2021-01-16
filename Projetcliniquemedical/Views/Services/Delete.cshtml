@@ -1,0 +1,40 @@
+﻿@model Projetcliniquemedical.Models.Service
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2 style="color:black">Supprimer service</h2>
+
+<div class="content-panel">
+    <div class="panel-body">
+
+        <h4 style="color:brown">Voulez-vous vraiment supprimer ce service?</h4>
+
+        <hr />
+
+        <dl class="dl-horizontal">
+            <div class="row col-lg-12">
+                <dt style="color:darkslateblue" class="col-lg-2">
+                    @Html.DisplayNameFor(model => model.ServiceNom)
+                </dt>
+
+                <dd style="color:black" class="col-lg-4">
+                    @Html.DisplayFor(model => model.ServiceNom)
+                </dd>
+            </div>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color col-lg-4">
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>
+
